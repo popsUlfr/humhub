@@ -28,7 +28,7 @@ humhub.module('live.push', function (module, require, $) {
         });
         socket.on('message', function (data) {
             message = JSON.parse(data);
-            event.trigger(message.type.replace(/\./g, ':'), [[message]]);
+            event.trigger(message.type.replace(/\./g, ':'), [[message], {}]);
         });
     };
 
